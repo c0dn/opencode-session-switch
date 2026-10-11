@@ -13,10 +13,10 @@
       "import": "./src/server.ts"
     },
     "./cli": {
-      "import": "./tui.ts"
+      "import": "./dist/cli.js"
     },
     "./tui": {
-      "import": "./tui.ts"
+      "import": "./dist/cli.js"
     },
     "./tui-v1": {
       "import": "./dist/tui.js"

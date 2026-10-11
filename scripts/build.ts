@@ -2,13 +2,14 @@ import { fileURLToPath, URL } from "node:url";
 import { build, write } from "bun";
 import solidPlugin from "@opentui/solid/bun-plugin";
 
-const entry = fileURLToPath(new URL("../src/tui.tsx", import.meta.url));
+// OpenCode compiles Solid JSX only outside node_modules, so installed packages ship compiled TUI entries.
+const entries = { tui: "../src/tui.tsx", cli: "../src/cli.tsx" };
 const outdir = fileURLToPath(new URL("../dist", import.meta.url));
 
 const result = await build({
-  entrypoints: [entry],
+  entrypoints: Object.values(entries).map((entry) => fileURLToPath(new URL(entry, import.meta.url))),
   outdir,
-  naming: "tui.js",
+  naming: "[name].js",
   format: "esm",
   target: "bun",
   packages: "external",
