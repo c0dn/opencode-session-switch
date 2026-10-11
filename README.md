@@ -38,7 +38,7 @@ For local V2 development, use `file:///path/to/opencode-session-switch`. For V1,
 
 ## Use It
 
-- Sidebar: expand `Sessions` and click a session name to switch to it.
+- Sidebar: expand `Sessions` and click a session name to switch to it. The list shows sessions from the current directory only: open tabs first, then the 8 most recently used. Use `/sessions` for the full history.
 
 ## Notes
 
