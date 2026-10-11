@@ -1,48 +1,36 @@
 # OpenCode Session Switch
 
-Adds a compact session dropdown to the OpenCode sidebar.
+Adds a session list to the OpenCode V2 sidebar. OpenCode V1 is not supported;
+use the upstream [Dylan-Liew/opencode-session-switch](https://github.com/Dylan-Liew/opencode-session-switch) for V1.
 
 ## Install
 
-Recommended:
+```bash
+opencode plugin add github:c0dn/opencode-session-switch
+```
+
+or add `"github:c0dn/opencode-session-switch"` to `plugins` in
+`~/.config/opencode/opencode.json`, then restart OpenCode.
+
+## Use it
+
+Expand `Sessions` in the sidebar and click a session to switch to it. The list
+shows sessions from the current session's directory only: open tabs first,
+then the 8 most recently used. A spinner marks running sessions; the others
+show `open` or how long ago they were used. Use `/sessions` for the full
+history.
+
+## Development
+
+The TUI entry is `src/cli.tsx`. OpenCode compiles Solid JSX only outside
+`node_modules`, so installed copies load the compiled `dist/cli.js`. Rebuild
+and commit it after every change:
 
 ```bash
-opencode plugin -g opencode-session-switch
+bun install
+bun run bundle
+bun run test
 ```
-
-If OpenCode already has an older cached copy, force a refresh:
-
-```bash
-opencode plugin -g -f opencode-session-switch
-```
-
-For an OpenCode V2 manual install, add the plugin to `~/.config/opencode/opencode.json`. OpenCode loads its server entrypoint and sends its `tui` entrypoint to the CLI:
-
-```json
-{
-  "$schema": "https://opencode.ai/config.json",
-  "plugins": ["opencode-session-switch"]
-}
-```
-
-OpenCode V1 continues to load the same package from `~/.config/opencode/tui.json`:
-
-```json
-{
-  "$schema": "https://opencode.ai/tui.json",
-  "plugin": ["opencode-session-switch/tui"]
-}
-```
-
-For local V2 development, use `file:///path/to/opencode-session-switch`. For V1, use the checkout path in `tui.json`. Restart OpenCode after changing plugin config.
-
-## Use It
-
-- Sidebar: expand `Sessions` and click a session name to switch to it. The list shows sessions from the current directory only: open tabs first, then the 8 most recently used. Use `/sessions` for the full history.
-
-## Notes
-
-The sidebar uses OpenCode's local CLI route API for direct session switching. It supports OpenCode V1 1.18.31 and V2 2.0.7.
 
 ## License
 

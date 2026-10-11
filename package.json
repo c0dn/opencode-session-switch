@@ -1,6 +1,6 @@
 {
   "name": "opencode-session-switch",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "OpenCode TUI plugin that adds a session switch panel to the sidebar.",
   "type": "module",
   "main": "./index.ts",
@@ -17,25 +17,21 @@
     },
     "./tui": {
       "import": "./dist/cli.js"
-    },
-    "./tui-v1": {
-      "import": "./dist/tui.js"
     }
   },
   "files": [
     "index.ts",
-    "tui.ts",
     "dist",
     "src",
     "README.md"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dylan-Liew/opencode-session-switch.git"
+    "url": "git+https://github.com/c0dn/opencode-session-switch.git"
   },
-  "homepage": "https://github.com/Dylan-Liew/opencode-session-switch#readme",
+  "homepage": "https://github.com/c0dn/opencode-session-switch#readme",
   "bugs": {
-    "url": "https://github.com/Dylan-Liew/opencode-session-switch/issues"
+    "url": "https://github.com/c0dn/opencode-session-switch/issues"
   },
   "keywords": [
     "opencode",
@@ -62,7 +58,6 @@
     "@opencode/plugin": "2.0.7"
   },
   "devDependencies": {
-    "@opencode-ai/plugin": "1.18.31",
     "@opentui/core": "0.5.10",
     "@opentui/solid": "0.5.10",
     "@types/bun": "latest",

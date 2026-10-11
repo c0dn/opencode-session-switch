@@ -1,14 +1,7 @@
-import type { Hooks, Plugin, PluginModule } from "@opencode-ai/plugin";
-import type { Plugin as V2Plugin } from "@opencode/plugin";
+import { Plugin } from "@opencode/plugin";
 
-const PLUGIN_ID = "opencode-session-switch";
-
-const server: Plugin = async (): Promise<Hooks> => ({});
-
-const module: PluginModule & V2Plugin.Plugin = {
-  id: PLUGIN_ID,
-  server,
+// The sidebar lives in the TUI entry (dist/cli.js); the server side has nothing to do.
+export default Plugin.define({
+  id: "opencode-session-switch",
   setup() {},
-};
-
-export default module;
+});
