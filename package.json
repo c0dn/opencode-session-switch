@@ -50,7 +50,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "bun ./scripts/build.ts",
+    "bundle": "bun ./scripts/build.ts",
     "test": "tsc -p tsconfig.json --noEmit"
   },
   "peerDependencies": {
